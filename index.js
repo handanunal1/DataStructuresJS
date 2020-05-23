@@ -30,14 +30,25 @@ class HashTable {
           return currentBucket[i][1]
         }
       }
-    } // if there is no collisions it will be O(1)
-     // But now O(n)
+    }
     return undefined;
+  }
+  
+  keys(){
+    const keysArray = [];
+ 
+    for (let i = 0; i < this.data.length; i++){
+      if(this.data[i]){
+        keysArray.push(this.data[i][0][0])
+      }
+    }
+
+    return keysArray;
   }
 }
 
 const myHashTable = new HashTable(50);
-myHashTable.set('grapes', 10000)
-myHashTable.get('grapes')
-myHashTable.set('apples', 9)
-myHashTable.get('apples')
+myHashTable.set('grapes', 10000);
+myHashTable.set('apples', 54);
+myHashTable.set('oranges',21);
+myHashTable.keys();
